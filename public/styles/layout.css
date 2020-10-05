@@ -15,6 +15,10 @@ html {
  */
 
 body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -24,3 +28,9 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  width: 90%;
+  display: flex;
+  background-color: #f4f1ec;
+ }
