@@ -1,0 +1,29 @@
+#tweet-text {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 4px solid black ;
+  width: 100%;
+}
+
+::placeholder {
+text-align: left;  
+}
+
+.submit-button {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+  /* border-top-width: 10px; */
+  /* border-top: black; */
+}
+
+button {
+  font-family: 'Bungee';
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+}
+
+output {
+  font-family: 'Bungee';
+}

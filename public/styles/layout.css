@@ -33,4 +33,6 @@ body {
   width: 90%;
   display: flex;
   background-color: #f4f1ec;
+  flex-direction: column;
+  justify-content: center;
  }
