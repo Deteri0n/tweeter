@@ -29,10 +29,10 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-  width: 90%;
-  display: flex;
-  background-color: #f4f1ec;
-  flex-direction: column;
-  justify-content: center;
- }
+main {
+width: 90%;
+display: flex;
+background-color: #f4f1ec;
+flex-direction: column;
+justify-content: center;
+}
