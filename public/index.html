@@ -6,6 +6,8 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" type="text/css" />
+
 
     
     <!-- Bungee & Source Sans Pro fonts -->    
@@ -22,27 +24,35 @@
 
 
 
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 
 
   </head>
 
+
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav-style">
       <span>tweeter</span>
-      <div><strong>Write</strong> a new tweet</div>
+      <div class="new-tweet-nav">
+        <div>
+          <strong>Write</strong> a new tweet
+        </div>
+          <i class="fas fa-angle-double-down"></i>
+        </div>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
         <img src="/images/profile-hex.png"> 
       </div>
-      <br>
       <div>
         <h2>Étienne LC</h2>
       </div>
