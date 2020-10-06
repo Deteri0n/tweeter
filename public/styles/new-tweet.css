@@ -21,4 +21,10 @@
 
 .submit-button output {
   font-family: 'Bungee';
+
+}
+
+.submit-button output[value='negative'] {
+  font-family: 'Bungee';
+  color: #FF0000;
 }
