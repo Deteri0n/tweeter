@@ -2,7 +2,7 @@ article {
   padding: 0.5em;
   background-color: #f4f1ec;
   border: 4px solid black;
-
+  opacity: 0.5; 
 }
 
 article header {
@@ -12,18 +12,18 @@ article header {
   padding: 0.25em;
 }
 
-article header .picture-name {
+.picture-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-article header .picture-name img {
+.picture-name img {
   max-height: 43px;
   max-width: 43px;
 }
 
-article header .picture-name a {
+.picture-name a {
   padding: 0.25em;
 }
 
@@ -44,7 +44,12 @@ article footer {
   font-size: smaller;
 }
 
-article footer .socials {
+.socials {
   color:  #4056A1;
 }
 
+article:hover {
+  box-shadow: 0.25em 0.25em #798ed6;
+  /* font-weight: bolder; */
+  opacity: 1;
+}
