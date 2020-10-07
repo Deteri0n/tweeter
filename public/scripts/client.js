@@ -32,12 +32,25 @@ $(document).ready(() => {
     return $tweet;
   };
 
+
   const renderTweets = (tweetsArr) => {
     tweetsArr.forEach(element => {
       let $tweet = createTweetElement(element);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     });
   };
+
+  // ajax request to get the tweets and render them
+  let loadTweets = (callback) => {
+    $.ajax({
+      url:'/tweets'
+    }).then((tweets) => {
+      renderTweets(callback(tweets));
+    });
+  };
+
+  // first load of the tweets on get method
+  loadTweets((data) => data);
 
   // creates a submit ajax request instead of the one inside the form
   $('.new-tweet form').submit(function(event) {
@@ -54,19 +67,14 @@ $(document).ready(() => {
         data,
         url: '/tweets',
         method: 'POST'
+      }).then( () => {
+        $(this).children('textarea').val('');
+        loadTweets((arr) => arr.filter((e) => e.content.text === dataValidation));
       });
+
     }
   });
 
-  // ajax request to get the tweets and render them
-  let loadTweets = () => {
-    $.ajax({
-      url:'/tweets'
-    }).then((tweets) => {
-      renderTweets(tweets);
-    });
-  };
-
-  loadTweets();
+  
 
 });
