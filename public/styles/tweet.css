@@ -50,6 +50,5 @@ article footer {
 
 article:hover {
   box-shadow: 0.25em 0.25em #798ed6;
-  /* font-weight: bolder; */
   font-weight: bolder;
 }
