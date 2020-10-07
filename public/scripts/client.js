@@ -5,6 +5,12 @@
  */
 $(document).ready(() => {
 
+  // escape function to prevent injected script
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = (tweetObj) => {
 
@@ -17,7 +23,7 @@ $(document).ready(() => {
                         <a>${tweetObj.user.handle}</a>
                       </div>
                     </header>
-                    <p>${tweetObj.content.text}</p>
+                    <p>${escape(tweetObj.content.text)}</p>
                     <footer>
                       <time>${Date(tweetObj.created_at)}</time>
                       <div class='social'>
@@ -55,6 +61,7 @@ $(document).ready(() => {
   // creates a submit ajax request instead of the one inside the form
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
+    const unSerializedData = $(this).children('textarea').val();
     const data = $(this).serialize();
     const dataValidation = data.slice(5);
 
@@ -64,12 +71,15 @@ $(document).ready(() => {
       alert('Tweet too long!');
     } else {
       $.ajax({
-        data,
+        data : data,
         url: '/tweets',
         method: 'POST'
-      }).then( () => {
+      }).then(() => {
         $(this).children('textarea').val('');
-        loadTweets((arr) => arr.filter((e) => e.content.text === dataValidation));
+        $('.counter').val('140');
+        loadTweets((arr) => arr.filter((e) => {
+          return e.content.text === unSerializedData;
+        }));
       });
 
     }
