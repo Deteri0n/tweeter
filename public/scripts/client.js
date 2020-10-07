@@ -29,7 +29,7 @@ $(document).ready(() => {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
  
  
   const createTweetElement = (tweetObj) => {
@@ -56,15 +56,26 @@ $(document).ready(() => {
     let $tweet = $('<article>').append(htmlText);
 
     return $tweet;
-  }
+  };
 
   const renderTweets = (tweetsArr) => {
     tweetsArr.forEach(element => {
       let $tweet = createTweetElement(element);
       $('#tweets-container').append($tweet);
     });
-  }
+  };
 
   renderTweets(data);
+
+  $('.new-tweet form').submit(function(event) {
+    console.log('Triggered');
+    event.preventDefault();
+    const data = $(this).serialize();
+    $.ajax({
+      data: data,
+      url: '/tweets',
+      method: 'POST'
+    });
+  });
 
 })
