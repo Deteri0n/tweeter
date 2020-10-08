@@ -26,7 +26,7 @@ $(document).ready(() => {
                     <p>${escape(tweetObj.content.text)}</p>
                     <footer>
                       <time>${Date(tweetObj.created_at)}</time>
-                      <div class='social'>
+                      <div class='socials'>
                         <i class='fas fa-flag'></i>
                         <i class='fas fa-retweet'></i>
                         <i class='fas fa-heart'></i>
@@ -90,6 +90,20 @@ $(document).ready(() => {
         }));
       });
 
+    }
+  });
+  
+  $('.new-tweet-nav').hover(() => {
+    $('.new-tweet-nav').find('i').animate();
+  });
+
+  $('.new-tweet-nav').click(() => {
+    if ($('.new-tweet').is(':hidden')) {
+      $('.new-tweet').slideDown( () => {
+        $('#tweet-text').focus();
+      });
+    } else {
+      $('.new-tweet').slideUp();
     }
   });
   
