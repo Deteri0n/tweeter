@@ -61,7 +61,7 @@ $(document).ready(() => {
   // creates a submit ajax request instead of the one inside the form
   $('.new-tweet form').submit(function(event) {
     $('.error-message').slideUp(() => {
-      $('.error-message span').text('')
+      $('.error-message span').text('');
     });
     event.preventDefault();
     const unSerializedData = $(this).children('textarea').val();
@@ -77,18 +77,18 @@ $(document).ready(() => {
       $('.error-message').slideDown(() => {
         $('.error-message span').text('Tweet too long!');
       });
-      } else {
-      $.ajax({
-        data : data,
-        url: '/tweets',
-        method: 'POST'
-      }).then(() => {
-        $(this).children('textarea').val('');
-        $('.counter').val('140');
-        loadTweets((arr) => arr.filter((e) => {
-          return e.content.text === unSerializedData;
-        }));
-      });
+    } else {
+    $.ajax({
+      data : data,
+      url: '/tweets',
+      method: 'POST'
+    }).then(() => {
+      $(this).children('textarea').val('');
+      $('.counter').val('140');
+      loadTweets((arr) => arr.filter((e) => {
+        return e.content.text === unSerializedData;
+      }));
+    });
 
     }
   });
@@ -99,7 +99,7 @@ $(document).ready(() => {
 
   $('.new-tweet-nav').click(() => {
     if ($('.new-tweet').is(':hidden')) {
-      $('.new-tweet').slideDown( () => {
+      $('.new-tweet').slideDown(() => {
         $('#tweet-text').focus();
       });
     } else {
