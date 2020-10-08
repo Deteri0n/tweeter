@@ -2,7 +2,9 @@
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+*/
+
+// waiting for the file to finish loading 
 $(document).ready(() => {
 
   // escape function to prevent injected script
@@ -12,6 +14,7 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
+  //creates the HTML code for the corresponding tweet and returns the JQUERY objects containing it 
   const createTweetElement = (tweetObj) => {
 
     let htmlText =  `<header>
@@ -38,7 +41,7 @@ $(document).ready(() => {
     return $tweet;
   };
 
-
+  // adds the tweets to the tweets-container section in the HTML code
   const renderTweets = (tweetsArr) => {
     tweetsArr.forEach(element => {
       let $tweet = createTweetElement(element);
@@ -46,7 +49,7 @@ $(document).ready(() => {
     });
   };
 
-  // ajax request to get the tweets and render them
+  // ajax request to get the tweets from the database and render them
   let loadTweets = (callback) => {
     $.ajax({
       url:'/tweets'
@@ -55,10 +58,10 @@ $(document).ready(() => {
     });
   };
 
-  // first load of the tweets on get method
+  //loads the tweets from the database
   loadTweets((data) => data);
 
-  // creates a submit ajax request instead of the one inside the form
+  // creates an ajax request on submit instead of the submit of the form
   $('.new-tweet form').submit(function(event) {
     $('.error-message').slideUp(() => {
       $('.error-message span').text('');
@@ -68,7 +71,7 @@ $(document).ready(() => {
     const data = $(this).serialize();
     const dataValidation = data.slice(5);
     
-
+    // checking if the textarea is empty or null
     if (!dataValidation) {
       $('.error-message').slideDown(function() {
         $('.error-message span').text('Cannot submit an empty tweet!');
@@ -77,6 +80,7 @@ $(document).ready(() => {
       $('.error-message').slideDown(() => {
         $('.error-message span').text('Tweet too long!');
       });
+    // adding the tweet to the database if correct and rendering it
     } else {
     $.ajax({
       data : data,
@@ -93,10 +97,7 @@ $(document).ready(() => {
     }
   });
   
-  $('.new-tweet-nav').hover(() => {
-    $('.new-tweet-nav').find('i').animate();
-  });
-
+  // sliding up and down the new-tweet section on the page
   $('.new-tweet-nav').click(() => {
     if ($('.new-tweet').is(':hidden')) {
       $('.new-tweet').slideDown(() => {
