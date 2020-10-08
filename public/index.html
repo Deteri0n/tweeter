@@ -50,38 +50,41 @@
         </div>
     </nav>
 
-    <header class="profile">
-      <div>
-        <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-        <h2>Étienne LC</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class='error-message'>
-          <i class="fas fa-exclamation-triangle"></i>
-          <span>
-            Error message !
-          </span>
-          <i class="fas fa-exclamation-triangle"></i>
+    <div class='header-main'>
+      <header class="profile">
+        <div>
+          <img src="/images/profile-hex.png"> 
         </div>
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
-          <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-          <div class="submit-button">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text" value="positive">140</output>
+        <div>
+          <h2>Étienne LC</h2>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class='error-message'>
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>
+              Error message !
+            </span>
+            <i class="fas fa-exclamation-triangle"></i>
           </div>
-        </form>
-      </section>
+          <form method="POST" action="/tweets/">
+            <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+            <div class="submit-button">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text" value="positive">140</output>
+            </div>
+          </form>
+        </section>
 
-      <section id="tweets-container">
-      </section>
+        <section id="tweets-container">
+        </section>
+      </main>
 
-    </main>
+    </div>
+
   </body>
+
 </html>

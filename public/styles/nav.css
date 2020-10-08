@@ -2,13 +2,15 @@
 .nav-style {
   display: flex;
   height: 120px;
-  background-color: #4056A1;
+  background-image: url("../images/asfalt-light.png");
+  background-color: rgb(255, 166, 0);
   color: #FFFFFF;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
+  border-color:  rgb(255, 166, 0);
 }
 
 .nav-style span {
@@ -30,7 +32,7 @@
 .fa-angle-double-down {
   padding : 0.25em;
   position: relative;
-  color: rgba(255, 166, 0, 0.863);
+  color: red;
   animation: updown 2s ease infinite;
 }
   
@@ -44,4 +46,14 @@
   100% {
     transform: translateY(-20%);
   }
+}
+
+@media (min-width: 1024px) {
+  
+  .nav-style {
+    background-image: none;
+    background-color:  #4056a1;
+    border: none;
+  }
+
 }
