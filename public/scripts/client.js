@@ -60,16 +60,24 @@ $(document).ready(() => {
 
   // creates a submit ajax request instead of the one inside the form
   $('.new-tweet form').submit(function(event) {
+    $('.error-message').slideUp(() => {
+      $('.error-message span').text('')
+    });
     event.preventDefault();
     const unSerializedData = $(this).children('textarea').val();
     const data = $(this).serialize();
     const dataValidation = data.slice(5);
+    
 
     if (!dataValidation) {
-      alert('Cannot submit an empty tweet!');
+      $('.error-message').slideDown(function() {
+        $('.error-message span').text('Cannot submit an empty tweet!');
+      });
     } else if (dataValidation.length > 140) {
-      alert('Tweet too long!');
-    } else {
+      $('.error-message').slideDown(() => {
+        $('.error-message span').text('Tweet too long!');
+      });
+      } else {
       $.ajax({
         data : data,
         url: '/tweets',
