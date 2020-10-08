@@ -23,11 +23,11 @@ article header {
   max-width: 43px;
 }
 
-.picture-name a {
+.picture-name span {
   padding: 0.25em;
 }
 
-article header a {
+article header span {
   color: #4056a1;
 }
 

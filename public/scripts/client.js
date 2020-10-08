@@ -20,10 +20,10 @@ $(document).ready(() => {
     let htmlText =  `<header>
                       <div class='picture-name'>
                         <img src=${tweetObj.user.avatars}>
-                        <a>${tweetObj.user.name}</a>
+                        <span>${tweetObj.user.name}</span>
                       </div>
                       <div>
-                        <a>${tweetObj.user.handle}</a>
+                        <span>${tweetObj.user.handle}</span>
                       </div>
                     </header>
                     <p>${escape(tweetObj.content.text)}</p>
