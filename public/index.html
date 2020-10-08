@@ -62,6 +62,13 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class='error-message'>
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>
+            Error message !
+          </span>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
