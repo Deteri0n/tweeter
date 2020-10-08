@@ -6,7 +6,6 @@
 
 // waiting for the file to finish loading 
 $(document).ready(() => {
-
   // escape function to prevent injected script
   const escape =  function(str) {
     let div = document.createElement('div');
@@ -16,7 +15,6 @@ $(document).ready(() => {
 
   //creates the HTML code for the corresponding tweet and returns the JQUERY objects containing it 
   const createTweetElement = (tweetObj) => {
-
     let htmlText =  `<header>
                       <div class='picture-name'>
                         <img src=${tweetObj.user.avatars}>
@@ -28,7 +26,7 @@ $(document).ready(() => {
                     </header>
                     <p>${escape(tweetObj.content.text)}</p>
                     <footer>
-                      <time>${Date(tweetObj.created_at)}</time>
+                      <time>${moment(tweetObj.created_at).fromNow()}</time>
                       <div class='socials'>
                         <i class='fas fa-flag'></i>
                         <i class='fas fa-retweet'></i>
