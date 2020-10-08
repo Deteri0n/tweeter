@@ -13,11 +13,11 @@
 
 .nav-style span {
   font-family: 'Bungee';
-  padding: 1.5em;
+  padding:  0em 1.5em;
 }
 
 .nav-style div {
-  padding: 1.5em;
+  padding: 0 1.5em;
 }
 
 .new-tweet-nav {
@@ -28,8 +28,8 @@
 }
 
 .fa-angle-double-down {
+  padding : 0.25em;
   position: relative;
-  top: -30px;
   color: rgba(255, 166, 0, 0.863);
   animation: updown 2s ease infinite;
 }
