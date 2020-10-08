@@ -1,5 +1,6 @@
 
 .nav-style {
+  
   display: flex;
   height: 120px;
   background-image: url("../images/asfalt-light.png");
@@ -11,18 +12,16 @@
   position: fixed;
   top: 0;
   border-color:  rgb(255, 166, 0);
-}
-
-.nav-style span {
-  font-family: 'Bungee';
-  padding:  0em 1.5em;
-}
-
-.nav-style div {
   padding: 0 1.5em;
 }
 
+.nav-style span {
+
+  font-family: 'Bungee';
+}
+
 .new-tweet-nav {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +29,7 @@
 }
 
 .fa-angle-double-down {
+  
   padding : 0.25em;
   position: relative;
   color: red;
@@ -37,6 +37,7 @@
 }
   
 @keyframes updown {
+
   0% {
     transform: translateY(-20%);
   }
@@ -49,11 +50,10 @@
 }
 
 @media (min-width: 1024px) {
-  
+
   .nav-style {
     background-image: none;
     background-color:  #4056a1;
     border: none;
   }
-
 }

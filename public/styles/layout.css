@@ -3,7 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
+
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -15,6 +17,7 @@ html {
  */
 
 body {
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,6 +33,7 @@ body {
 */
 
 main {
+
 width: 90%;
 display: flex;
 background-color: #f4f1ec;
@@ -38,6 +42,7 @@ justify-content: center;
 }
 
 .header-main {
+
   padding-top: 120px;
   width: 100%;
   display: flex;
@@ -48,15 +53,16 @@ justify-content: center;
 @media (min-width: 1024px) {
   
   .header-main {
+
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
   }
 
   main {
+
     margin: 5%;
     flex-grow: 5;
     width: 0;
   }
-
 }

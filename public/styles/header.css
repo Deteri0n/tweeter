@@ -1,5 +1,6 @@
 
 .profile {
+
   display: flex;
   height: 400px;
   width: 100%;
@@ -13,6 +14,7 @@
 @media (min-width: 1024px) {
   
   .profile {
+
     align-self: flex-start;
     margin: 5%;
     width: 0;
@@ -20,5 +22,4 @@
     border: 4px solid;
     
   }
-
 }
