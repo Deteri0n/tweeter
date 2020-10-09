@@ -1,24 +1,27 @@
+@use 'ressources';
+
 
 .nav-style {
   
   display: flex;
   height: 120px;
-  background-image: url("../images/asfalt-light.png");
-  background-color: rgb(255, 166, 0);
-  color: #FFFFFF;
+  background-image: url(#{ressources.$bgImage});
+  background-color: ressources.$orange;
+  color: ressources.$white;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  border-color:  rgb(255, 166, 0);
+  border-color: ressources.$orange;
   padding: 0 1.5em;
+
+  span {
+  
+    font-family: 'Bungee';
+  }
 }
 
-.nav-style span {
-
-  font-family: 'Bungee';
-}
 
 .new-tweet-nav {
 
@@ -53,7 +56,7 @@
 
   .nav-style {
     background-image: none;
-    background-color:  #4056a1;
+    background-color: ressources.$blue;
     border: none;
   }
 }

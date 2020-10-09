@@ -1,0 +1,71 @@
+@use 'ressources';
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+ html {
+
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #545149;
+  background-color: ressources.$white;
+  font-size: 24px;
+  font-family: ressources.$fonts;
+
+  /*
+   * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
+}
+
+main {
+
+width: 90%;
+display: flex;
+background-color: ressources.$white;
+flex-direction: column;
+justify-content: center;
+}
+
+
+
+.header-main {
+
+  padding-top: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  
+  .header-main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  main {
+
+    margin: 5%;
+    flex-grow: 5;
+    width: 0;
+  }
+}

@@ -1,0 +1,51 @@
+@use 'ressources';
+
+#tweet-text {
+  margin-top: 1em;
+  background-color: ressources.$white;
+  outline: none;
+  border: none;
+  border-bottom: 4px solid;
+  width: 100%;
+  resize: none;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+
+  button {
+    font-family: 'Bungee';
+    background-color: ressources.$blue;
+    color: ressources.$white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  output {
+    font-family: 'Bungee';
+  
+  }
+
+  output[value='negative'] {
+    font-family: 'Bungee';
+    color: ressources.$red;
+  }
+
+}
+
+.error-message {
+  display: none;
+  text-align: center;
+  margin: 0.5em; 
+  justify-content: center;
+  border : 4px solid ressources.$red;
+  color: ressources.$red;
+
+  span {
+    margin: 1em;
+    font-weight: bolder;
+  }
+
+}

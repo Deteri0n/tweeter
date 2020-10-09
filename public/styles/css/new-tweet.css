@@ -1,4 +1,3 @@
-
 #tweet-text {
   margin-top: 1em;
   background-color: #f4f1ec;
@@ -14,35 +13,32 @@
   justify-content: space-between;
   margin: 1em 0;
 }
-
 .submit-button button {
-  font-family: 'Bungee';
-  background-color: #4056A1;
-  color: #FFFFFF;
+  font-family: "Bungee";
+  background-color: #4056a1;
+  color: #f4f1ec;
   border: none;
   cursor: pointer;
 }
-
 .submit-button output {
-  font-family: 'Bungee';
-
+  font-family: "Bungee";
 }
-
-.submit-button output[value='negative'] {
-  font-family: 'Bungee';
-  color: #FF0000;
+.submit-button output[value=negative] {
+  font-family: "Bungee";
+  color: red;
 }
 
 .error-message {
   display: none;
   text-align: center;
-  margin: 0.5em; 
+  margin: 0.5em;
   justify-content: center;
-  border : 4px solid red;
+  border: 4px solid red;
   color: red;
 }
-
 .error-message span {
   margin: 1em;
   font-weight: bolder;
 }
+
+/*# sourceMappingURL=new-tweet.css.map */

@@ -1,0 +1,22 @@
+@use 'ressources';
+
+.profile {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(ressources.$bgImage);
+  background-color: ressources.$orange;
+}
+
+@media (min-width: 1024px) {
+  .profile {
+    align-self: flex-start;
+    margin: 5%;
+    width: 0;
+    flex-grow: 3;
+    border: 4px solid;
+  }
+}
